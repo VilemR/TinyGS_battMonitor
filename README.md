@@ -12,6 +12,8 @@ If the advanced parameters parser detects power monitoring configuration paramet
 
 ![screenshot](img/advanced_config.jpg)
 
+<img align="center" src="img/advanced_config.jpg" alt="Advanced config">
+
 The parameters required to activate the power monitoring feature are:
 - **adcVoltIntPIN**: Analog **pin for internal** voltage measurement (integer - e.g. 34)
 - **volCoefInt**: Voltage **coefficient** for internal measurement (float - e.g. 0.0075517320)
