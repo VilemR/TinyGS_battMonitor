@@ -30,7 +30,8 @@ This ensures accurate voltage readings on the Dashboard. Here is an example conf
   "volCoefInt": 0.0029626418,
   "adcVoltExtPIN": 35,
   "volCoefExt": 0.0075517320
-}`
+}
+
 
 This configuration specifies the analog pins used for internal (`adcVoltIntPIN`) and external (`adcVoltExtPIN`) voltage measurements, along with their respective calibration coefficients (`volCoefInt` and `volCoefExt`). Ensure these values align with your hardware setup for accurate monitoring. The more carefully you perform the calibration step, the more accurate and precise the voltage values displayed on the Dashboard page will be. Taking time to fine-tune the volCoef parameters ensures reliable and precise monitoring of power supply voltages.
 
