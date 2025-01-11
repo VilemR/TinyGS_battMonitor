@@ -5,7 +5,7 @@
 
  Although it was designed for the LILY TTGO board, this feature should work with any other board equipped with one or two analog (ADC) pins (e.g., HELTEC). You will need to adjust the settings in the advanced parameters configuration field based on the specific pins used.
 
-![screenshot](img/additional_circuit.jpg)
+![screenshot](img/addition_circuit.jpg)
 ![screenshot](img/ttgo.jpg)
 
 If the advanced parameters parser detects power monitoring configuration parameters, the firmware will enable one or two power supply monitoring instances, displaying the corresponding voltages on the Dashboard page. 
@@ -13,12 +13,12 @@ If the advanced parameters parser detects power monitoring configuration paramet
 ![screenshot](img/advanced_config.jpg)
 
 The parameters required to activate the power monitoring feature are:
-- **adcVoltIntPIN**: Analog pin for internal voltage measurement (integer - e.g. 34)
-- **volCoefInt**: Voltage coefficient for internal measurement (float - e.g. 0.0075517320)
-- **adcVoltExtPIN**: Analog pin for external voltage measurement (integer)
-- **volCoefExt**: Voltage coefficient for external measurement (float)
+- **adcVoltIntPIN**: Analog **pin for internal** voltage measurement (integer - e.g. 34)
+- **volCoefInt**: Voltage **coefficient** for internal measurement (float - e.g. 0.0075517320)
+- **adcVoltExtPIN**: Analog **pin for external** voltage measurement (integer)
+- **volCoefExt**: Voltage **coefficient** for external measurement (float)
 
-The `volCoef` multiplication parameter is used for precise calibration of the voltage displayed on the Dashboard page. It is recommended to first complete all hardware modifications, flash the updated firmware, and then activate the feature by adding the required parameters in the JSON configuration. Initially, set `volCoef` to 1, observe the voltage displayed by the device, and compare it with the voltage measured using a voltmeter for the corresponding input. Recalculate the volCoef parameter as:
+The `volCoef` multiplication parameter is used for precise calibration of the voltage displayed on the Dashboard page. It is recommended to first complete all hardware modifications, flash the updated firmware, and then activate the feature by adding the required parameters in the JSON configuration. Initially, set `volCoef` to 1, observe the voltage displayed by the device, and compare it with the voltage measured using a voltmeter for the corresponding input. **Recalculate the volCoef parameter** as:
 
                             `volCoef`=  voltage_measured / voltage_presented
 
@@ -31,7 +31,7 @@ This ensures accurate voltage readings on the Dashboard. Here is an example conf
   
   "adcVoltExtPIN": 35,
   "volCoefExt": 0.0075517320
-}```
+}
 
 This configuration specifies the analog pins used for internal (`adcVoltIntPIN`) and external (`adcVoltExtPIN`) voltage measurements, along with their respective calibration coefficients (`volCoefInt` and `volCoefExt`). Ensure these values align with your hardware setup for accurate monitoring. The more carefully you perform the calibration step, the more accurate and precise the voltage values displayed on the Dashboard page will be. Taking time to fine-tune the volCoef parameters ensures reliable and precise monitoring of power supply voltages.
 
