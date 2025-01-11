@@ -18,17 +18,16 @@ The parameters required to activate the power monitoring feature are:
 - **adcVoltExtPIN**: Analog **pin for external** voltage measurement (integer)
 - **volCoefExt**: Voltage **coefficient** for external measurement (float)
 
-The `volCoef` multiplication parameter is used for precise calibration of the voltage displayed on the Dashboard page. It is recommended to first complete all hardware modifications, flash the updated firmware, and then activate the feature by adding the required parameters in the JSON configuration. Initially, set `volCoef` to 1, observe the voltage displayed by the device, and compare it with the voltage measured using a voltmeter for the corresponding input. **Recalculate the volCoef parameter** as:
+The `volCoef` multiplication parameter is used for precise calibration of the voltage displayed on the Dashboard page. It is recommended to first complete all hardware modifications, flash the updated firmware, and then activate the feature by adding the required parameters in the JSON configuration. Initially, set `volCoef` to 1, observe the voltage displayed by the device, and compare it with the voltage measured using a voltmeter for the corresponding input. **Recalculate the `volCoef` parameter** as:
 
                             `volCoef`=  voltage_measured / voltage_presented
 
-This ensures accurate voltage readings on the Dashboard. Here is an example configuration for the TTGO board you are using:
+This ensures accurate voltage readings on the Dashboard. Here is an example configuration for the TTGO board I am using for one of my Tiny Ground Station:
 
 ```json
 {
   "adcVoltIntPIN": 34,
   "volCoefInt": 0.0029626418,
-  
   "adcVoltExtPIN": 35,
   "volCoefExt": 0.0075517320
 }
