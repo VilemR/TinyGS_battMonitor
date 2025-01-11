@@ -1,5 +1,7 @@
 ﻿# Power Supply Monitoring Feature for TinyGS
- This feature introduces real-time monitoring of internal battery voltage and external power sources (e.g., charger, solar panel, Pb battery) using one/two analog pin(s) on the TTGO board. The feature displays power supply status continuously on the device Dashboard page. Implementation requires adding 4 resistors, basic wiring, extending the advanced configuration with a JSON parameter, and flashing the firmware built from the provided updated code. Simplify power management and enhance your TinyGS setup with this new capability!
+ This feature introduces real-time monitoring of internal battery voltage and external power sources (e.g., charger, solar panel, Pb battery) using one/two analog pin(s) on the TTGO board. The feature displays power supply status continuously on the device Dashboard page. This project is a clone of the official TinyGS release 2403241 (99.99%) with minor code tweaks to enable the new power monitoring feature. 
+ 
+ Implementation requires adding 4 resistors, basic wiring, extending the advanced configuration with a JSON parameter, and flashing the firmware built from the provided updated code. Simplify power management and enhance your TinyGS setup with this new capability!
 
  ![screenshot](img/dashboard.jpg)
 
@@ -22,7 +24,9 @@ The `volCoef` multiplication parameter is used for precise calibration of the vo
 
                             `volCoef`=  voltage_measured / voltage_presented
 
-This ensures accurate voltage readings on the Dashboard. Here is an example configuration for the TTGO board I am using for one of my Tiny Ground Station:
+This ensures accurate voltage readings on the Dashboard. 
+
+Here is an example configuration for the TTGO board I am using for one of my Tiny Ground Station:
 
 `
 {
@@ -36,6 +40,17 @@ This configuration specifies the analog pins used for internal (`adcVoltIntPIN`)
 
 In my setup, I am using this feature for a remote TinyGS node located in my garden, powered solely by an external 10Ah 12V Pb battery. This setup allows me to remotely monitor both the internal and external battery statuses. While the external Pb battery is occasionally charged via a solar panel, there are rare instances when it requires additional charging. This feature helps me prevent excessive discharging below 11V, which could otherwise damage the Pb battery and significantly reduce its capacity.
 
+### Installation
+
+Installing the TinyGS firmware with power supply monitoring is straightforward. You can either compile and flash the firmware yourself using PlatformIO (recommended for advanced users) or follow these steps:
+
+Flash the original firmware onto your device.
+Perform a firmware re-update using the precompiled firmware.bin file provided in the \firmware_ttgo subfolder.
+Please note that while the firmware is compiled for the TTGO board, it may work on other boards as well. If using a different board, remember to adjust the JSON configuration accordingly!
+
 Enjoy this feature! Any suggestions or contributions are welcome, including code pushbacks. Meanwhile, I plan to submit a proposal to the TinyGS team for the inclusion of this feature in their official firmware.
 
-<sub>Vilem Reznicek |TinyGS | Power Supply Monitoring | C++ | 2025 </sub>
+#### Links
+https://github.com/G4lile0/tinyGS Original TinyGS project
+
+<sub>Vilem Reznicek | TinyGS | Power Supply Monitoring | C++ | 2025 </sub>
